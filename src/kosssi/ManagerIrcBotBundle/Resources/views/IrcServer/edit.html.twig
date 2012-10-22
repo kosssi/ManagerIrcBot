@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+<form action="{{ path('irc_server_edit', {'id': form.vars.value.id }) }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <button name="submit" value="{{ 'Save'|trans }}">{{ 'Save'|trans }}</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,125 @@
+<?php
+
+namespace kosssi\ManagerIrcBotBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * kosssi\ManagerIrcBotBundle\Entity\IrcServer
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="kosssi\ManagerIrcBotBundle\Entity\IrcServerRepository")
+ */
+class IrcServer
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string $name
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var string $host
+     *
+     * @ORM\Column(name="host", type="string", length=255)
+     */
+    private $host;
+
+    /**
+     * @var integer $port
+     *
+     * @ORM\Column(name="port", type="integer", length=6)
+     */
+    private $port;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return IrcServer
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set host
+     *
+     * @param string $host
+     * @return IrcServer
+     */
+    public function setHost($host)
+    {
+        $this->host = $host;
+    
+        return $this;
+    }
+
+    /**
+     * Get host
+     *
+     * @return string 
+     */
+    public function getHost()
+    {
+        return $this->host;
+    }
+
+    /**
+     * Set port
+     *
+     * @param integer $port
+     * @return IrcServer
+     */
+    public function setPort($port)
+    {
+        $this->port = $port;
+    
+        return $this;
+    }
+
+    /**
+     * Get port
+     *
+     * @return integer 
+     */
+    public function getPort()
+    {
+        return $this->port;
+    }
+}

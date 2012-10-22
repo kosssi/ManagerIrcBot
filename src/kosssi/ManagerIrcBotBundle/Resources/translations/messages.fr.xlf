@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Add</source>
+                <target>Ajouter</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Server list</source>
+                <target>Liste des servers</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Add a new server</source>
+                <target>Ajouter un nouveau serveur</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Launch</source>
+                <target>Lancer</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Stop</source>
+                <target>Arreter</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Edit</source>
+                <target>Editer</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Save</source>
+                <target>Sauvegarder</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Remove</source>
+                <target>Supprimer</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

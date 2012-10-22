@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+{{ parent() }}
+
+{% stylesheets '@ManagerIrcBotBundle/Resources/public/css/irc_server.css' %}
+<link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+
+{% javascripts '@ManagerIrcBotBundle/Resources/public/js/jquery-1.8.2.min.js' %}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}
+
+{% block body %}
+
+<h1>{{ 'Server list'|trans }}</h1>
+
+<ul class="irc_server_list">
+    {% for server in servers %}
+    <li>
+        <div class="irc_server_name">{{ server.name }}</div>
+        <div class="irc_server_lien">
+            <a href="irc://{{ server.host }}:{{ server.port }}/{{ server.channels }}">irc://{{ server.host }}:{{ server.port }}/{{ server.channels }}</a>
+        </div>
+        <div class="irc_server_status">
+            {% if server.pid == 0 %}
+            <a href="{{ path('irc_server_launch', {'id': server.id }) }}">{{ 'Launch'|trans }}</a>
+            {% else %}
+            <a href="{{ path('irc_server_stop', {'id': server.id }) }}">{{ 'Stop'|trans }}</a>
+            {% endif %}
+            <a href="{{ path('irc_server_edit', {'id': server.id }) }}">{{ 'Edit'|trans }}</a>
+            <a href="{{ path('irc_server_remove', {'id': server.id }) }}">{{ 'Remove'|trans }}</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{{ path('irc_server_new') }}">{{ 'Add a new server'|trans }}</a>
+
+{% endblock %}
