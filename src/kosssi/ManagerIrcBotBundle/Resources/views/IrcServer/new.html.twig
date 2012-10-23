@@ -1,10 +1,19 @@
-{% extends '::base.html.twig' %}
+{% extends 'ManagerIrcBotBundle::manager.html.twig' %}
+
+
+{% block title %}{{ 'Add a new server'|trans }}{% endblock %}
+
+
 {% block body %}
+
+<h1>{{ 'Add a new server'|trans }}</h1>
 
 <form action="{{ path('irc_server_new') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
 
     <button name="submit" value="{{ 'Add'|trans }}">{{ 'Add'|trans }}</button>
 </form>
+
+<a href="{{ path('irc_server') }}">{{ 'Return to the list of servers'|trans }}</a>
 
 {% endblock %}

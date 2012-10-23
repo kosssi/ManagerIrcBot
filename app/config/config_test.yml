@@ -6,7 +6,6 @@ framework:
     session:
         storage_id: session.storage.mock_file
     profiler:
-        enable: false
 
 web_profiler:
     toolbar: false
@@ -14,3 +13,6 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+parameters:
+    locale: en

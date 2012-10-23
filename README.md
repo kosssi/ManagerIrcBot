@@ -14,15 +14,15 @@ ManagerIrcBot
 
 Change configuration in app/config/parameters.yml
 
-## Create database
-
-    php app/console doctrine:database:create
-    php app/console doctrine:schema:create
-
 ## Install dépendense
 
     curl -s http://getcomposer.org/installer | php
     php composer.phar install
+
+## Create database
+
+    php app/console doctrine:database:create
+    php app/console doctrine:schema:create
 
 ## Launch server dev
 

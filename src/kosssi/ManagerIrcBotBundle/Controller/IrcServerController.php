@@ -11,10 +11,16 @@ use kosssi\ManagerIrcBotBundle\Entity\IrcServer;
 use kosssi\ManagerIrcBotBundle\Form\Type\IrcServerType;
 use Whisnet\IrcBotBundle\Command\BotCommand;
 
+/**
+ * @package    ManagerIrcBotBundle
+ * @author     Simon Constans <kosssi@gmail.com>
+ *
+ * @Route("/irc_server")
+ */
 class IrcServerController extends Controller
 {
     /**
-     * @Route("/irc_server", name="irc_server")
+     * @Route("", name="irc_server")
      * @Template()
      */
     public function listAction()
@@ -26,7 +32,7 @@ class IrcServerController extends Controller
     }
 
     /**
-     * @Route("/irc_server/new", name="irc_server_new")
+     * @Route("/new", name="irc_server_new")
      * @Template()
      */
     public function newAction()
@@ -51,7 +57,7 @@ class IrcServerController extends Controller
     }
 
     /**
-     * @Route("/irc_server/edit/{id}", name="irc_server_edit")
+     * @Route("/edit/{id}", name="irc_server_edit")
      * @Template()
      */
     public function editAction(IrcServer $ircServer)
@@ -75,7 +81,7 @@ class IrcServerController extends Controller
     }
 
     /**
-     * @Route("/irc_server/launch/{id}", name="irc_server_launch")
+     * @Route("/launch/{id}", name="irc_server_launch")
      * @Template()
      */
     public function launchAction(IrcServer $ircServer)
@@ -94,7 +100,7 @@ class IrcServerController extends Controller
     }
 
     /**
-     * @Route("/irc_server/stop/{id}", name="irc_server_stop")
+     * @Route("/stop/{id}", name="irc_server_stop")
      * @Template()
      */
     public function stopAction(IrcServer $ircServer)
@@ -112,7 +118,7 @@ class IrcServerController extends Controller
     }
 
     /**
-     * @Route("/irc_server/remove/{id}", name="irc_server_remove")
+     * @Route("/remove/{id}", name="irc_server_remove")
      * @Template()
      */
     public function removeAction(IrcServer $ircServer)

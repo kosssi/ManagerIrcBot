@@ -8,7 +8,7 @@
             </trans-unit>
             <trans-unit id="2">
                 <source>Server list</source>
-                <target>Liste des servers</target>
+                <target>Liste des serveurs</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>Add a new server</source>
@@ -33,6 +33,14 @@
             <trans-unit id="8">
                 <source>Remove</source>
                 <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Return to the list of servers</source>
+                <target>Retourner à la liste des serveurs</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Edit server %name%</source>
+                <target>Edition du serveur %name%</target>
             </trans-unit>
         </body>
     </file>

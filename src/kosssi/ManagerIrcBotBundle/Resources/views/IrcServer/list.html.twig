@@ -1,20 +1,8 @@
-{% extends '::base.html.twig' %}
+{% extends 'ManagerIrcBotBundle::manager.html.twig' %}
 
-{% block stylesheets %}
-{{ parent() }}
 
-{% stylesheets '@ManagerIrcBotBundle/Resources/public/css/irc_server.css' %}
-<link rel="stylesheet" href="{{ asset_url }}" />
-{% endstylesheets %}
-{% endblock %}
+{% block title %}{{ 'Server list'|trans }}{% endblock %}
 
-{% block javascripts %}
-{{ parent() }}
-
-{% javascripts '@ManagerIrcBotBundle/Resources/public/js/jquery-1.8.2.min.js' %}
-<script type="text/javascript" src="{{ asset_url }}"></script>
-{% endjavascripts %}
-{% endblock %}
 
 {% block body %}
 
