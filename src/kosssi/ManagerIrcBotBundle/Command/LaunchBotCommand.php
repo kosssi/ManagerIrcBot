@@ -13,7 +13,8 @@ use Whisnet\IrcBotBundle\Connection\Socket;
 use kosssi\ManagerIrcBotBundle\Entity\IrcServer;
 
 /**
- * @author Simon Constans <kosssi@gmail.com>
+ * @package    ManagerIrcBotBundle
+ * @author     Simon Constans <kosssi@gmail.com>
  */
 class LaunchBotCommand extends ContainerAwareCommand
 {
@@ -33,16 +34,23 @@ class LaunchBotCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $ircServerName = $input->getArgument('irc_server_name');
-        /** @var $ircServer IrcServer */
+        /** @var $server IrcServer */
         $server = $this->getContainer()->get('doctrine')->getRepository('ManagerIrcBotBundle:IrcServer')->findOneByName($ircServerName);
 
-        $dispatcher = $this->getContainer()->get('event_dispatcher');
+        try {
+            $dispatcher = $this->getContainer()->get('event_dispatcher');
 
-        $socket = new Socket($server->getHost(), $server->getPort(), $this->getContainer()->get('validator'), $this->getContainer()->get('event_dispatcher'));
-        $socket->connect();
+            $socket = new Socket($server->getHost(), $server->getPort(), $this->getContainer()->get('validator'), $this->getContainer()->get('event_dispatcher'));
+            $socket->connect();
 
-        do {
-            $dispatcher->dispatch('whisnet_irc_bot.data_from_server', new DataFromServerEvent(Utils::cleanUpServerRequest($socket->getData())));
-        } while (true);
+            do {
+                $dispatcher->dispatch('whisnet_irc_bot.data_from_server', new DataFromServerEvent(Utils::cleanUpServerRequest($socket->getData())));
+            } while (true);
+        } catch (Exception $e) {
+            $server->setPid(0);
+            $em = $this->getContainer()->get('doctrine')->getManager();
+            $em->persist($server);
+            $em->flush();
+        }
     }
 }

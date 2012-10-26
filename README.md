@@ -29,6 +29,13 @@ Change configuration in app/config/parameters.yml
     curl -L http://github.com/downloads/benja-M-1/symfttpd/symfttpd.phar 2> /dev/null > symfttpd.phar
     php symfttpd.phar spawn -p 1872
 
+## Test
+
+    php app/console doctrine:database:create --env test
+    php app/console doctrine:schema:create --env test
+    phpunit -c app/
+
+
 # TODO
 
 * create tests

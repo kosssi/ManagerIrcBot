@@ -9,13 +9,18 @@
 <h1>{{ 'Server list'|trans }}</h1>
 
 <ul class="irc_server_list">
+    <li class="legends">
+        <div class="irc_server_name">{{ 'Name'|trans }}</div>
+        <div class="irc_server_lien">{{ 'Link'|trans }}</div>
+        <div class="irc_server_actions">{{ 'Actions'|trans }}</div>
+    </li>
     {% for server in servers %}
     <li>
         <div class="irc_server_name">{{ server.name }}</div>
         <div class="irc_server_lien">
             <a href="irc://{{ server.host }}:{{ server.port }}/{{ server.channels }}">irc://{{ server.host }}:{{ server.port }}/{{ server.channels }}</a>
         </div>
-        <div class="irc_server_status">
+        <div class="irc_server_actions">
             {% if server.pid == 0 %}
             <a href="{{ path('irc_server_launch', {'id': server.id }) }}">{{ 'Launch'|trans }}</a>
             {% else %}

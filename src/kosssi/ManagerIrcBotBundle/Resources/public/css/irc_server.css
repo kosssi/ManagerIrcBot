@@ -1,3 +1,6 @@
+.irc_server_list, .irc_server_list li, .irc_server_list div {margin:0; padding:0; border-width: 0px;}
+.irc_server_list li.legends div {background-color: #DFE1E2;}
 .irc_server_list div {display: inline-block;}
 .irc_server_name {width: 200px;}
 .irc_server_lien {width: 400px;}
+.irc_server_actions {width: 400px;}
