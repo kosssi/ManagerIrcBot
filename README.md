@@ -11,8 +11,9 @@ ManagerIrcBot
 ## Configuration
 
     cp app/config/parameters.yml.dist app/config/parameters.yml
+    cp app/config/config_irc.yml.dist app/config/config_irc.yml
 
-Change configuration in app/config/parameters.yml
+Change the configuration files
 
 ## Install dépendense
 

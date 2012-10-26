@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: config_irc.yml }
 
 framework:
     #esi:             ~
@@ -59,13 +60,4 @@ swiftmailer:
     password:  %mailer_password%
     spool:     { type: memory }
 
-whisnet_irc_bot:
-    connection_class: Whisnet\IrcBotBundle\Connection\Socket
-    host: irc.freenode.net
-    port: 6667
-    command_prefix: !bot
-    user:
-        username: IrcBotBunle
-        mode: 8
-    channels: ["#test-irc"]
 

@@ -86,7 +86,8 @@ class IrcServerController extends Controller
      */
     public function launchAction(IrcServer $ircServer)
     {
-        $commandJob = 'php /home/kosssi/dev/projects/ManagerIrcBot/app/console ircbot:launch:server ' . $ircServer->getName();
+        //$commandJob = 'php /home/kosssi/dev/projects/ManagerIrcBot/app/console ircbot:launch:server ' . $ircServer->getName();
+        $commandJob = 'php ' . $this->get('kernel')->getRootDir() . '/console ircbot:launch';
         $command = $commandJob.' > /dev/null 2>&1 & echo $!';
         exec($command ,$op);
         $pid = (int)$op[0];

@@ -12,6 +12,7 @@ bin
 
 # Configuration files
 app/config/parameters.yml
+app/config/config_irc.yml
 
 # phar
 composer.phar
